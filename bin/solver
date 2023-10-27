@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Solve Wordsearch Games"""
+
+import argparse
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from wordsearch import wordsearch
+
+def main(args):
+    b = wordfinder.WordFinder(os.path.expanduser(args.board), os.path.expanduser(args.words))
+    b.find_list()
+    if not b.find_list():
+        print("MISSING WORDS!", ", ".join([w for w in b.missing]))
+    print()
+    b.show_answer()
+    print()
+    if args.save:
+        b.save()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Wordsearch Solver")
+    parser.add_argument('--board', action="store", required=True, help="Board Game File")
+    parser.add_argument('--words', action="store", required=True, help="Word List File")
+    parser.add_argument('--save', action="store_true", required=False, help="Save Results to File")
+    main(parser.parse_args())
