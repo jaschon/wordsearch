@@ -3,4 +3,4 @@
 - Wordsearch builder and solver
 
 
-### Fixing folder structure....be patient
+### In process....
