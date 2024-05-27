@@ -3,7 +3,7 @@
 - Wordsearch builder and solver
 
 
-### Commandline
+### Command Line
 
 #### Builder
 
